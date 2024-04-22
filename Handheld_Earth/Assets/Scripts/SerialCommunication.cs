@@ -13,6 +13,8 @@ public class SerialCommunication : MonoBehaviour
     int rButton = 0;
     int lButton = 0;
 
+    Vector3 rotEuler;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +30,28 @@ public class SerialCommunication : MonoBehaviour
         string[] splitArray = value.Split(",");
 
         Debug.Log(splitArray[3] + " " + splitArray[4]);
+
+        rotEuler = new Vector3(
+            float.Parse(splitArray[0]),
+            float.Parse(splitArray[1]),
+            float.Parse(splitArray[2]));
+
+        lButton = Int32.Parse(splitArray[3]);
+        rButton = Int32.Parse(splitArray[4]);
+    }
+
+    public int GetRButton()
+    {
+        return rButton;
+    }
+
+    public int GetLButton()
+    {
+        return lButton;
+    }
+
+    public Vector3 GetRotEuler()
+    {
+        return rotEuler;
     }
 }
