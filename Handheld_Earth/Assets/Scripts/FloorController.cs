@@ -26,7 +26,6 @@ public class FloorController : MonoBehaviour
             return;
         }
 
-
-        this.transform.localEulerAngles = sc.GetRotEuler() - initialEuler;
+        this.transform.localEulerAngles = sc.GetRotEuler();
     }
 }

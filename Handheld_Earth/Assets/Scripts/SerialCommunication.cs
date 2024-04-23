@@ -7,7 +7,7 @@ using System;
 public class SerialCommunication : MonoBehaviour
 {
     // Set the port amd the baud rate as indicated by the arduino
-    SerialPort stream = new SerialPort("COM3", 9600);
+    SerialPort stream = new SerialPort("COM6", 9600);
 
     // Variables to be used once received data is split into an array
     int rButton = 0;
@@ -32,7 +32,8 @@ public class SerialCommunication : MonoBehaviour
         string value = stream.ReadLine();
         string[] splitArray = value.Split(",");
 
-        Debug.Log(splitArray[3] + " " + splitArray[4]);
+        print(splitArray[0] + ", " + splitArray[1] + ", " + splitArray[2]);
+        //Debug.Log(splitArray[3] + " " + splitArray[4]);
 
         rotEuler = new Vector3(
             float.Parse(splitArray[0]),
