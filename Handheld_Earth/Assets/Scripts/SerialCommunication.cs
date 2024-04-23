@@ -15,6 +15,9 @@ public class SerialCommunication : MonoBehaviour
 
     Vector3 rotEuler;
 
+    // Turns true when we read for the first time 
+    private bool firstStreamRead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,8 @@ public class SerialCommunication : MonoBehaviour
 
         lButton = Int32.Parse(splitArray[3]);
         rButton = Int32.Parse(splitArray[4]);
+
+        firstStreamRead = true;
     }
 
     public int GetRButton()
@@ -53,5 +58,10 @@ public class SerialCommunication : MonoBehaviour
     public Vector3 GetRotEuler()
     {
         return rotEuler;
+    }
+
+    public bool GetHasFirstStreamRead()
+    {
+        return firstStreamRead;
     }
 }
