@@ -7,10 +7,11 @@ using System;
 public class SerialCommunication : MonoBehaviour
 {
     [Tooltip("How many inputs should this hold to average between for positions")]
-    [SerializeField] int inputCount; 
+    [SerializeField] int inputCount;
+    [SerializeField] string portName = "COM3";
 
     // Set the port amd the baud rate as indicated by the arduino
-    SerialPort stream = new SerialPort("COM6", 9600);
+    SerialPort stream;
 
     // Variables to be used once received data is split into an array
     int rButton = 0;
@@ -25,8 +26,10 @@ public class SerialCommunication : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        stream = new SerialPort(portName, 9600);
+
         // Open the serial stream
-       stream.Open();
+        stream.Open();
 
        inputQueue = new Queue<Vector3>();
     }
