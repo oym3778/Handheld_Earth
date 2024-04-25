@@ -5,10 +5,11 @@ using UnityEngine.AI;
 
 public class Dinosaur : MonoBehaviour
 {
-    [SerializeField] SerialCommunication serial;
 
     [SerializeField] public Vector3 position = Vector3.zero;
     [SerializeField] public GameObject target;
+
+    private SerialCommunication serial;
     public NavMeshAgent agent;
 
     // use later to track all dinosaurs and have each predator follow closest prey
@@ -20,7 +21,8 @@ public class Dinosaur : MonoBehaviour
         //serial.GetRButton();
         //serial.GetLButton();
         position = transform.position;
-        
+
+        serial = GameObject.FindAnyObjectByType<SerialCommunication>();
     }
 
     // Update is called once per frame

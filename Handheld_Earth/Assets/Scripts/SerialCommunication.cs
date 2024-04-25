@@ -6,6 +6,9 @@ using System;
 
 public class SerialCommunication : MonoBehaviour
 {
+    [Tooltip("How many inputs should this hold to average between for positions")]
+    [SerializeField] int inputCount; 
+
     // Set the port amd the baud rate as indicated by the arduino
     SerialPort stream = new SerialPort("COM3", 9600);
 
@@ -17,12 +20,15 @@ public class SerialCommunication : MonoBehaviour
 
     // Turns true when we read for the first time 
     private bool firstStreamRead = false;
+    private Queue<Vector3> inputQueue;
 
     // Start is called before the first frame update
     void Start()
     {
         // Open the serial stream
        stream.Open();
+
+       inputQueue = new Queue<Vector3>();
     }
 
     // Update is called once per frame
@@ -35,10 +41,24 @@ public class SerialCommunication : MonoBehaviour
         print(splitArray[0] + ", " + splitArray[1] + ", " + splitArray[2]);
         //Debug.Log(splitArray[3] + " " + splitArray[4]);
 
-        rotEuler = new Vector3(
+        Vector3 inputEuler = new Vector3(
             float.Parse(splitArray[0]),
             float.Parse(splitArray[1]),
             float.Parse(splitArray[2]));
+
+        if(inputQueue.Count >= inputCount)
+        {
+            inputQueue.Dequeue();
+        }
+
+        inputQueue.Enqueue(inputEuler);
+
+        Vector3 sum = new Vector3();
+        foreach(Vector3 v in inputQueue)
+        {
+            sum += v;
+        }
+        rotEuler = sum / (float)inputQueue.Count;
 
         lButton = Int32.Parse(splitArray[3]);
         rButton = Int32.Parse(splitArray[4]);
