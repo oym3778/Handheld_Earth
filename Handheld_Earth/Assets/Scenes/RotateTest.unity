@@ -458,6 +458,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sc: {fileID: 1798230845}
+  xClamp: {x: -10, y: 70}
+  yClamp: {x: -60, y: 60}
 --- !u!4 &2062847308
 Transform:
   m_ObjectHideFlags: 0

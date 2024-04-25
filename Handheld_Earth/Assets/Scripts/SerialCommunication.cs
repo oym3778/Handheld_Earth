@@ -7,7 +7,7 @@ using System;
 public class SerialCommunication : MonoBehaviour
 {
     // Set the port amd the baud rate as indicated by the arduino
-    SerialPort stream = new SerialPort("COM6", 9600);
+    SerialPort stream = new SerialPort("COM3", 9600);
 
     // Variables to be used once received data is split into an array
     int rButton = 0;
