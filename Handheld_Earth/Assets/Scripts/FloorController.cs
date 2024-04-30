@@ -12,6 +12,7 @@ public class FloorController : MonoBehaviour
     // holds min(x) and max(y) for individual clamps
     [SerializeField] Vector2 xClamp;
     [SerializeField] Vector2 yClamp;
+    [SerializeField] Vector2 zClamp;
 
     [Header("Mouse")]
     [SerializeField] float roationSpeed;
@@ -50,6 +51,10 @@ public class FloorController : MonoBehaviour
         // clamping to prevent that from happening
         float y = Mathf.Clamp(sc.GetRotEuler().y, yClamp.x, yClamp.y);
         float x = Mathf.Clamp(sc.GetRotEuler().x, xClamp.x, xClamp.y);
+        //float z = Mathf.Clamp(sc.GetRotEuler().z, zClamp.x, zClamp.y);
+
+        //z = Mathf.Abs(z);
+
         this.transform.localEulerAngles = new Vector3(x, y, 0f);
         //this.transform.localEulerAngles = sc.GetRotEuler();
     }

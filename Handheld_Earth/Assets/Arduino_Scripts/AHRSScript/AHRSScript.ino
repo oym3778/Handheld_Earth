@@ -51,6 +51,9 @@ void loop()
     roll = madgwick.getRoll();
     pitch = madgwick.getPitch();
     yaw = madgwick.getYaw();
+
+    yaw = map(yaw, 0, 360, -180, 180);
+
     Serial.print(roll);
     Serial.print(",");
     Serial.print(pitch);
