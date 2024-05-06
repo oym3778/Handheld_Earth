@@ -249,6 +249,8 @@ MonoBehaviour:
   dinos: []
   preyList: []
   predList: []
+  currentIndxPred: 0
+  currentIndxPrey: 0
 --- !u!4 &103259117
 Transform:
   m_ObjectHideFlags: 0

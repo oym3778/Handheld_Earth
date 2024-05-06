@@ -23,8 +23,8 @@ public class Dinosaur : MonoBehaviour
         // TO_DO: Find the nearest prey as predator and target
         // TO_DO: Find the nearest pred as prey and !target (run from target)
         //      Do this using tags already applied
-        if (transform.name == "Prey")
-        {
+        if (gameObject.tag == "Prey")
+        {            
             // Go the opposite direction of the predator
             agent.SetDestination(target.transform.position * -1);
         }
