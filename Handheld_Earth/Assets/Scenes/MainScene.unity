@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 915983469d9b4b24ca9678b4c1b89d2f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657958, g: 0.4964137, b: 0.5748193, a: 1}
+  m_IndirectSpecularColor: {r: 0.6669914, g: 0.7036138, b: 0.73290944, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 3
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentRadius: 0.12
+    agentHeight: 2.51
+    agentSlope: 60
+    agentClimb: 0.25
     ledgeDropHeight: 0
-    maxJumpAcrossDistance: 0
+    maxJumpAcrossDistance: 0.02
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.04
     manualTileSize: 0
     tileSize: 256
     buildHeightMesh: 0
@@ -347,6 +347,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 346838663321458415, guid: aa68bcfe13181b149a066a761433e0db, type: 3}
+      propertyPath: xClamp.x
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 346838663321458415, guid: aa68bcfe13181b149a066a761433e0db, type: 3}
+      propertyPath: xClamp.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 346838663321458415, guid: aa68bcfe13181b149a066a761433e0db, type: 3}
+      propertyPath: yClamp.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 346838663321458415, guid: aa68bcfe13181b149a066a761433e0db, type: 3}
+      propertyPath: yClamp.y
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 346838663321458415, guid: aa68bcfe13181b149a066a761433e0db, type: 3}
       propertyPath: zClamp.x
       value: -180
@@ -1240,6 +1256,18 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2634038535908168232, guid: ef315e5be4464a1488260cde3bc54940, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634038535908168232, guid: ef315e5be4464a1488260cde3bc54940, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634038535908168232, guid: ef315e5be4464a1488260cde3bc54940, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2634038535908168232, guid: ef315e5be4464a1488260cde3bc54940, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.17
       objectReference: {fileID: 0}
@@ -1311,6 +1339,18 @@ PrefabInstance:
     - target: {fileID: 7625290891018955309, guid: af5f7defec38bf24080695b261f65153, type: 3}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625290891018955309, guid: af5f7defec38bf24080695b261f65153, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625290891018955309, guid: af5f7defec38bf24080695b261f65153, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625290891018955309, guid: af5f7defec38bf24080695b261f65153, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7625290891018955309, guid: af5f7defec38bf24080695b261f65153, type: 3}
       propertyPath: m_LocalPosition.x

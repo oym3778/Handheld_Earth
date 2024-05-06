@@ -54,8 +54,8 @@ public class FloorController : MonoBehaviour
         //float z = Mathf.Clamp(sc.GetRotEuler().z, zClamp.x, zClamp.y);
 
         //z = Mathf.Abs(z);
-
-        this.transform.localEulerAngles = new Vector3(x, y, 0f);
+        
+        this.transform.localEulerAngles = new Vector3(y, x, 0f);
         //this.transform.localEulerAngles = sc.GetRotEuler();
     }
 

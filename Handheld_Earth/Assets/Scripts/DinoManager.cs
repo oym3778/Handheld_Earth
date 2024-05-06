@@ -37,6 +37,7 @@ public class DinoManager : MonoBehaviour
         if (serial.GetRButton() == 1)
         {
             instance = Instantiate(predator, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+            instance.transform.localScale = Vector3.one * Random.Range(0.6f, 1.0f) * instance.transform.localScale.magnitude;
 
             preyList = GameObject.FindGameObjectsWithTag("Prey");
             instance.GetComponent<Dinosaur>().target = preyList[currentIndxPrey];
@@ -50,6 +51,7 @@ public class DinoManager : MonoBehaviour
         else if (serial.GetLButton() == 1)
         {
             instance = Instantiate(prey, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+            instance.transform.localScale = Vector3.one * Random.Range(0.6f, 1.0f) * instance.transform.localScale.magnitude;
 
             predList = GameObject.FindGameObjectsWithTag("Predator");
             instance.GetComponent<Dinosaur>().target = predList[currentIndxPred];
@@ -60,6 +62,7 @@ public class DinoManager : MonoBehaviour
         }
     }
 
+    // never got used
     static GameObject FindClosestDino(GameObject currentDino, List<GameObject> givenList)
     {
         if (givenList.Count == 0)
