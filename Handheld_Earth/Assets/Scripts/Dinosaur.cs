@@ -9,26 +9,20 @@ public class Dinosaur : MonoBehaviour
     [SerializeField] public Vector3 position = Vector3.zero;
     [SerializeField] public GameObject target;
 
-    private SerialCommunication serial;
     public NavMeshAgent agent;
-
-    // use later to track all dinosaurs and have each predator follow closest prey
-    //List<int> numbers = new List<int>();
 
     // Start is called before the first frame update
     void Start()
     {
-        //serial.GetRButton();
-        //serial.GetLButton();
         position = transform.position;
-
-        serial = GameObject.FindAnyObjectByType<SerialCommunication>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        // TO_DO: Find the nearest prey as predator and target
+        // TO_DO: Find the nearest pred as prey and !target (run from target)
+        //      Do this using tags already applied
         if (transform.name == "Prey")
         {
             // Go the opposite direction of the predator
@@ -38,7 +32,6 @@ public class Dinosaur : MonoBehaviour
         {
             agent.SetDestination(target.transform.position);
         }
-        
 
     }
 }

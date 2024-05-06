@@ -15,7 +15,10 @@ public class SerialCommunication : MonoBehaviour
 
     // Variables to be used once received data is split into an array
     int rButton = 0;
+    int prevRButton = 0;
+
     int lButton = 0;
+    int prevLButton = 0;
 
     Vector3 rotEuler;
 
@@ -41,7 +44,7 @@ public class SerialCommunication : MonoBehaviour
         string value = stream.ReadLine();
         string[] splitArray = value.Split(",");
 
-        print(splitArray[0] + ", " + splitArray[1] + ", " + splitArray[2]);
+        //print(splitArray[0] + ", " + splitArray[1] + ", " + splitArray[2]);
         //Debug.Log(splitArray[3] + " " + splitArray[4]);
 
         Vector3 inputEuler = new Vector3(
@@ -71,12 +74,31 @@ public class SerialCommunication : MonoBehaviour
 
     public int GetRButton()
     {
-        return rButton;
+        if (prevRButton != rButton)
+        {
+            prevRButton = rButton;
+            return rButton;
+        }
+        else
+        {
+            prevRButton = rButton;
+            return 0;
+        }
+        
     }
 
     public int GetLButton()
     {
-        return lButton;
+        if (prevLButton != lButton)
+        {
+            prevLButton = lButton;
+            return lButton;
+        }
+        else
+        {
+            prevLButton = lButton;
+            return 0;
+        }
     }
 
     public Vector3 GetRotEuler()
